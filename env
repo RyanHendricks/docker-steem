@@ -1,0 +1,26 @@
+PLUGIN=webserver p2p json_rpc database_api condenser_api rc_api block_api account_history account_history_api
+THREAD_POOL_SIZE=256
+ENABLE_STALE_PRODUCTION=false
+SHARED_FILE_DIR="blockchain"
+SHARED_FILE_SIZE=54G
+MKT_HIST_BUCKET_SIZE=[15,60,300,3600,86400]
+MKT_HIST_BUCKETS_PER_SIZE=5760
+FLUSH_STATE_INTERVAL=0
+FOLLOW_MAX_FEED_SIZE=500
+P2P_USER_AGENT=Graphene Reference Implementation
+
+# account-history-track-account-range =
+# account-history-whitelist-ops =
+# account-history-blacklist-ops =
+# checkpoint =
+# edit-script =
+# follow-start-feeds = 0
+# p2p-endpoint =
+# p2p-max-connections =
+# seed-node =
+# p2p-seed-node =
+# webserver-http-endpoint =
+# webserver-ws-endpoint =
+# required-participation =
+# witness =
+# private-key =
