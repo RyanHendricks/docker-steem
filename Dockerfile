@@ -1,16 +1,15 @@
 FROM steemit/steem:latest
 
-# This Dockerfile is the official steemit/steem:latest but
-# with some modifications to the configuration (config.ini) file
-# to enable additional api plugins listed below.
+# The official Steemit/Steem:latest Dockerfile image uses the config file
+# config-for-docker.ini which only enables a select few plugins. This image
+# adds the fullnode.config.ini plugins to the config-for-docker.ini
 #
-# database_api
-# condenser_api
-# rc_api
-# block_api
-# account_history
-# account_history_api
+# plugin = webserver p2p json_rpc witness account_by_key reputation market_history
+# plugin = database_api account_by_key_api network_broadcast_api reputation market_history_api condenser_api block_api rc_api\
 #
-COPY config.ini /etc/steemd/config.ini
+# https://github.com/steemit/steem/blob/master/contrib/config-for-docker.ini
+# https://github.com/steemit/steem/blob/master/contrib/fullnode.config.ini
+
+COPY ./config/config.ini /etc/steemd/config.ini
 
 STOPSIGNAL SIGINT
