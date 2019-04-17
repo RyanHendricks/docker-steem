@@ -10,7 +10,11 @@ FROM steemit/steem:latest
 # https://github.com/steemit/steem/blob/master/contrib/config-for-docker.ini
 # https://github.com/steemit/steem/blob/master/contrib/fullnode.config.ini
 
-# COPY ./config/config.ini /etc/steemd/config.ini
-COPY ./config/config.ini /var/lib/steemd/config.ini
+
+COPY /config/config.ini /etc/steemd/config.ini
+COPY /config/config.ini /etc/steemd/fullnode.config.ini
+COPY /config/config.ini /etc/steemd/config-for-broadcaster.ini
+COPY /config/config.ini /etc/steemd/config-for-ahnode.ini
 
 STOPSIGNAL SIGINT
+
